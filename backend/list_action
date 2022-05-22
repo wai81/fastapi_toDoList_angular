@@ -1,0 +1,25 @@
+#ativate venv
+py -m venv venv
+#update pip
+py -m pip install --upgrade pip
+#instal pip packаgу 
+py -m pip install fastapi sqlalchemy alembic asyncpg uvicorn python-dotenv
+#or from requiremen.txt
+py -m pip install -r requiremen.txt
+#create postgres to docker
+docker run --rm --name postgres -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=qwerty -e POSTGRES_DB=fastTodo -d postgres
+#create 
+main.py 
+config.py 
+base_class.py 
+database.py
+model.py
+shemas.py
+service.py
+#initialize alembic async
+alembic init -t async migrations
+#init database or create 
+#need to edit migrations/env.py to get the database URL from config.py
+#create and run our first database migration.
+alembic revision --autogenerate -m 'added Todo table'
+alembic upgrade head
