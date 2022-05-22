@@ -23,3 +23,16 @@ alembic init -t async migrations
 #create and run our first database migration.
 alembic revision --autogenerate -m 'added Todo table'
 alembic upgrade head
+# create frontend
+# install node
+# instal angular
+npm install -g @angular/cli
+# create new app
+ng new my-first-project
+# run project
+ng serve --open
+# create component
+ng g component todo-form
+ng g component todo-list
+# create service
+ng g service todo-list
