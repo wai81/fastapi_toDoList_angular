@@ -4,12 +4,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from core.config import settings
 from api.base import api_router
 
-origins = [
+origins_ = [
     "http://localhost",
     "http://localhost:8080",
     "http://localhost:3030",
+    "http://loalhost:4200",
     "http://127.0.0.1:4200",
 ]
+
+origins = ["*"]
 
 def include_route(app):
     app.include_router(api_router)

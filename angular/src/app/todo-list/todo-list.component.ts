@@ -24,8 +24,8 @@ export class TodoListComponent implements OnInit {
 
   changeStatus(todo: Todo){
     this.todoListService.update(todo)
-      .subscribe(
-        () => {this.todos$ =this.todoListService.findAll();
+      .subscribe(() => {
+        this.todos$ =this.todoListService.findAll();
       });
     this.nzMessageService.info('Статус Изменен');
   }
