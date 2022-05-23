@@ -1,1 +1,20 @@
-<p>todo-list works!</p>
+<nz-layout>
+  <nz-content>
+    <div class="inner-content">
+      <div nz-row>
+        <div nz-col nzSpan="14" nzOffset="5">
+          <h1>Список событий</h1>
+          <app-todo-form>
+          </app-todo-form>
+          <nz-list nzItemLayout="horizontal">
+            <nz-list-item *ngFor="let todo of todos$ | async">
+              <ng-container >
+                <nz-tag [nzColor]="'cyan'">{{todo.title}}</nz-tag>
+              </ng-container>
+            </nz-list-item>
+          </nz-list>
+        </div>
+      </div>
+    </div>
+  </nz-content>
+</nz-layout>
