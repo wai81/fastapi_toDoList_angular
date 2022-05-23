@@ -1,1 +1,19 @@
-<p>todo-form works!</p>
+<div nz-row [nzGutter]="20">
+    <div nz-col>
+        <h1>Form</h1>
+        <form nz-form [nzLayout]="'inline'" [formGroup]="validateForm" (ngSubmit)="sbmitForm(validateForm.value)">
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Введиет ваше событие">
+                    <input formControlName="title" nz-input placeholder="Событие" />
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control [nzOffset]="7" [nzSpan]="12">
+                    <button nz-button nzType="primary" [disabled]="!validateForm.valid">Создать</button>
+                </nz-form-control>
+            </nz-form-item>
+        </form>
+
+    </div>
+
+</div>
